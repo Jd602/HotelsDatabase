@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="095C2433-73A2-92CA-D6DF-EA3B9194C394" name="Habitacion">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:13:04 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F1658A05-A187-2B7F-AAA3-DA7D742AD73D">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:15:04 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nivel" id="C345CFA7-2290-1110-A2FF-4CA8C0869BB4">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:16:26 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precioNoche" id="7977CAC2-D444-B8A1-05C1-997391E3991F">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 05:03:55 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="C9A72FDC-7CE8-67E8-EAC6-322B7FFDCC75">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:15:04 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Hospedaje_id" id="D738F3F9-8DCE-BF6B-B975-15713D7FEF66">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:24:40 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E43D4A6-B663-4951-9D02-A0DF7CE77B2D" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4A6AD3A7-C39F-F98B-1ED8-8C53198C225A" name="Habitacion_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:15:04 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1658A05-A187-2B7F-AAA3-DA7D742AD73D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16970AF4-4C14-C057-85F3-78FDF967AD66" name="Habitacion_Hospedaje_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:24:40 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D738F3F9-8DCE-BF6B-B975-15713D7FEF66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

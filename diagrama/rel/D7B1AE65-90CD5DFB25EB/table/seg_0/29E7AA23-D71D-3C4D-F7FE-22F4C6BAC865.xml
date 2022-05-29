@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29E7AA23-D71D-3C4D-F7FE-22F4C6BAC865" name="Factura">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:53:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idFactura" id="4D3D11DA-288E-4124-5F33-EAD991E5385E">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:00:10 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valorTotal" id="103243AE-3801-822C-82B3-B1D6AC636115">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:15:48 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Persona_id" id="C9726526-10B2-C6EB-5E35-6A9DC5199738">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:09:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A3B0390E-B004-F4AE-CE97-BE13343A2EF2" referredColumn="D4A1A355-446F-6EE4-B3CF-898BD2580A26"/>
+</associations>
+</Column>
+<Column name="nota" id="77AF9450-B0B3-BFEF-F697-2569FDB8DD73">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 04:25:51 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3146876E-B0AD-D0D9-B4C0-A71FB3C434C1" name="Factura_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:00:45 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="379ABAD1-11E6-E238-B971-83ED89D7B8ED" name="Factura_Persona_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:09:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9726526-10B2-C6EB-5E35-6A9DC5199738"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

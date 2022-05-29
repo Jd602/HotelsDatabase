@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5678698E-6A45-27C1-2B69-B6869CC7D849" name="Departamento">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:04:09 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_30</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="50F8C712-2FDC-1ED7-F1EC-0C40406A878C">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:04:57 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="AB0E8F97-962F-6FF5-241B-0EDA32B69808">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:04:57 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="05BAD96C-2DCD-DABB-7C57-ADED4D9C18DB" name="Departamento_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:04:57 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50F8C712-2FDC-1ED7-F1EC-0C40406A878C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

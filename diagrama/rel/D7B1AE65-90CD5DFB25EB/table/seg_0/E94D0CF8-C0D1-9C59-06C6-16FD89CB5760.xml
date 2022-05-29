@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E94D0CF8-C0D1-9C59-06C6-16FD89CB5760" name="Articulo">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:55:02 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="28146B5B-6B9F-0C65-9D3E-32C9359014EA">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:08:00 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="0F106CF1-54E5-CBCC-9439-C0089EA4DDFD">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 04:26:42 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="33783B3B-574E-5E35-F0F8-B72A36B585D7">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:08:00 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CompraArticulo_id" id="321D13CC-5768-1DAE-10DD-EDEA99ED7DCE">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:12:40 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="61AB272C-84A8-E9BD-471B-FD58D5C1DF00" referredColumn="F9B7754B-6382-12ED-9CF4-7B5AD284471D"/>
+</associations>
+</Column>
+<Column name="descripcion" id="040D93EA-1698-A56E-C760-A04BA9B0A267">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:08:00 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 CHAR</dataTypeSize>
+<ownDataTypeParameters>25 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="39467A29-B50E-843D-F370-E61A4F411E38" name="Articulo_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:08:00 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28146B5B-6B9F-0C65-9D3E-32C9359014EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A24428A-1B8A-F1FF-372F-9818BC225D60" name="Articulo_CompraArticulo_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:12:40 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="321D13CC-5768-1DAE-10DD-EDEA99ED7DCE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

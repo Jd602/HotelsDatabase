@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77F03ED9-B9EB-5BF4-969C-AE5AE5C7A31F" name="Instalacion">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:04:27 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="0D3C725F-862B-563F-E703-5514F21EA37D">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:05:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="8BFD02FE-920C-975A-E891-D6B3B7C83C12">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:05:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Hospedaje_id" id="E595A198-77F2-CE90-0CF1-486A93ADB88B">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-22 06:36:25 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0CDC0228-13E0-6098-B43F-1FF577D7797C" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
+</associations>
+</Column>
+<Column name="estado" id="9F307978-4852-6FC0-EB15-BF9DD5C7B9E3">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 05:04:27 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F25C695-409F-10CA-2D7D-359137CC8ED8" name="Instalacion_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:05:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D3C725F-862B-563F-E703-5514F21EA37D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5488017A-C1A5-400B-70CC-B29D6A2F19DB" name="Instalacion_Hospedaje_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-22 06:36:25 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E595A198-77F2-CE90-0CF1-486A93ADB88B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

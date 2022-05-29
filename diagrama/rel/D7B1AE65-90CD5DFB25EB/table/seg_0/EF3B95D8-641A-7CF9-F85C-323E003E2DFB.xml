@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EF3B95D8-641A-7CF9-F85C-323E003E2DFB" name="Persona">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:57:47 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cedula" id="D4A1A355-446F-6EE4-B3CF-898BD2580A26">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="BACC9B36-BC53-A17C-2EA2-E6FED3F7293A">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="148D163C-2165-FFE4-29C6-BC9E06AC1ABB">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="90C4FB83-9A65-2831-6429-314FE62C9DCE">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ciudad_id" id="3DB2CF51-73A4-B386-6B73-90ECFBDEA9A0">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:14:38 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7BC00D6-2C01-7FD5-D485-7AB42767E8A1" referredColumn="51393D3B-F34C-FB26-448F-CB321466C9DD"/>
+</associations>
+</Column>
+<Column name="correo" id="FC5CF712-D80A-2E49-CA6D-58CF28668992">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2F6CC608-3319-5E51-9FBA-30546C6165F7" name="Persona_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:01:14 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4A1A355-446F-6EE4-B3CF-898BD2580A26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB51B6B1-91FB-C930-D648-15622A9BC5AD" name="Persona_Ciudad_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:14:38 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3DB2CF51-73A4-B386-6B73-90ECFBDEA9A0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

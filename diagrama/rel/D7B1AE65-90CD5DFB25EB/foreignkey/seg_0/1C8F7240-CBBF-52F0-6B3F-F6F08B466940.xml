@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1C8F7240-CBBF-52F0-6B3F-F6F08B466940" containerWithKeyObject="8F119F1E-9DC7-68A7-89F3-C479664C0BAF" localFKIndex="DB75C979-77FC-6330-D34F-E0B31B845855" name="CompraPaquete_Factura_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:35:06 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>29E7AA23-D71D-3C4D-F7FE-22F4C6BAC865</referredTableID>
+<keyObject>3146876E-B0AD-D0D9-B4C0-A71FB3C434C1</keyObject>
+<referredKeyID>3146876E-B0AD-D0D9-B4C0-A71FB3C434C1</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

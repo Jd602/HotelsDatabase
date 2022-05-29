@@ -1,0 +1,10 @@
+Login/Registrar
+Registro de usuario
+Reserva de hospedaje/cancelación
+Pago de hospedaje
+Buscar hotel
+Buscar habitación
+Compra paquetes turísticos
+Comprar artículos de la tienda
+Reserva de automóviles
+Buscar automóviles

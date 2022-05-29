@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8FDA1B9A-72CF-3545-1C01-BD044B3AE04B" name="ReservaVeh">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:28:59 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1301903D-27B7-8883-197C-C38BEC73D214">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:36:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="costo" id="B340A398-0FAF-ABB0-E1CC-C62DFA4E789A">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:36:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Vehiculo_placa" id="CB9AF263-A5CD-CF5D-C9D9-6C1DD564E67A">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:59:46 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="266A5054-9619-EF89-0A0E-618309C896FC" referredColumn="CEA95F78-78D8-AF92-12F2-778BBEBBB41C"/>
+</associations>
+</Column>
+<Column name="Factura_idFactura" id="EB602F87-195A-4C53-4BAD-64966BBD5671">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:00:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98E38D31-03E0-D0FC-4E3B-C096E50EB7D2" referredColumn="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
+</associations>
+</Column>
+<Column name="fechaInicio" id="1B6FD873-7B50-25EB-B5FC-CAA9936AFB77">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:17:52 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fechaDevolucion" id="3B1BE635-79EC-365D-A4CE-317B25E3AA63">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:17:52 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ServicioAdicional_id" id="F281D806-C1DE-A177-EC87-0E6DEF2CB193">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:46:06 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="969C96C9-1265-DBEB-0528-C0C927879ADB" referredColumn="268D1849-4FB7-12CD-E9B5-BD8F0265D018"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="943C54E4-6E2F-961C-2AF6-14824AE2EDFE" name="ReservaVehiculo_PK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:36:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1301903D-27B7-8883-197C-C38BEC73D214"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4845F212-891D-88F2-2100-E7341EF9DCBD" name="ReservaVeh_Adicional_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:46:06 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F281D806-C1DE-A177-EC87-0E6DEF2CB193"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6CF31174-223F-29AF-44CD-626E2CA161C2" name="ReservaVeh_Vehiculo_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:59:46 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB9AF263-A5CD-CF5D-C9D9-6C1DD564E67A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5DC9A7CE-55FF-14B1-306D-DC4E4EE0607D" name="ReservaVeh_Factura_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:00:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB602F87-195A-4C53-4BAD-64966BBD5671"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
