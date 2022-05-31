@@ -18,20 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Hospedaje_id" id="DFEC93FE-E9DF-1FDF-B4B7-249D8AF3B749">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-22 06:36:03 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="044A3B93-3427-9732-7B53-6DAF5B4FB080" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
-</associations>
-</Column>
 <Column name="nombre" id="0832D9FD-88F9-4ECF-F98E-3AA86A4D213E">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-21 00:01:55 UTC</createdTime>
@@ -54,16 +40,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="6508DBFE-AF37-966F-D005-12B2E474BE4C"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="9A88F800-29F6-1046-5600-05F7A7681409" name="TipoHospedaje_Hospedaje_FK">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-22 06:36:02 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="DFEC93FE-E9DF-1FDF-B4B7-249D8AF3B749"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

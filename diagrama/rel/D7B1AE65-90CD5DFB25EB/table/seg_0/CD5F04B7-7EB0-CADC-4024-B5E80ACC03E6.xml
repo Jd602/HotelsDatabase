@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD5F04B7-7EB0-CADC-4024-B5E80ACC03E6" name="HospedajeRegimen">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 02:14:15 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Hospedaje_id" id="1539CA86-2BB4-EA87-3707-CCF4C85C262C">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 02:14:54 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A0B50D3C-4873-4D91-FFE9-38F73D3F9B38" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
+</associations>
+</Column>
+<Column name="Regimen_id" id="724AA822-7A39-6D24-303E-9C670DD3249F">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 02:16:36 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="84351386-E83E-E12B-8C39-EE70A44F3948" referredColumn="91BAAA47-E1D4-AC8E-5A43-DAAA2D142676"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4ABB618B-2439-1512-6A47-CB0A47AF7335" name="HospedajeRegimen_Hospedaje_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 02:14:54 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1539CA86-2BB4-EA87-3707-CCF4C85C262C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B09B8C77-AA8A-6EBB-1132-FE33A876B64A" name="HospedajeRegimen_Regimen_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 02:16:36 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="724AA822-7A39-6D24-303E-9C670DD3249F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

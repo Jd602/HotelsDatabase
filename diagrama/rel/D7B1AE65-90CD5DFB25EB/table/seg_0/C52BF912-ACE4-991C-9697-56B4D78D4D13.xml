@@ -41,6 +41,20 @@
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="TipoHospedaje_id" id="5CC7E278-AC0A-9CDF-CBE8-943F82DC53B0">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 01:29:28 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="83A22C4A-5536-548D-49CA-AD357DD2B3FC" referredColumn="6508DBFE-AF37-966F-D005-12B2E474BE4C"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="A091DCFC-45BC-066F-5DEB-39F859EF2761" name="Hospedaje_PK">
@@ -52,6 +66,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E79E4CFD-250B-371F-D9CC-857074846E9E" name="Hospedaje_TipoHospedaje_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 01:29:28 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5CC7E278-AC0A-9CDF-CBE8-943F82DC53B0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

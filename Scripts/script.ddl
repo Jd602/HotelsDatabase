@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 4.1.3.901
---   en:        2022-05-30 19:30:27 COT
+--   en:        2022-05-31 05:46:01 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -10,7 +10,8 @@ CREATE TABLE Adicional
   (
     id          INTEGER NOT NULL ,
     descripcion VARCHAR2 (30 CHAR) NOT NULL ,
-    numSeguro   VARCHAR2 (20 CHAR) ,
+    total FLOAT (10) NOT NULL ,
+    numSeguro VARCHAR2 (20 CHAR) ,
     costoSeguro FLOAT (10) ,
     costoGps FLOAT (10)
   ) ;
@@ -90,11 +91,19 @@ ALTER TABLE Habitacion ADD CONSTRAINT Habitacion_PK PRIMARY KEY ( id ) ;
 
 CREATE TABLE Hospedaje
   (
-    id            INTEGER NOT NULL ,
-    nombre        VARCHAR2 (30 CHAR) NOT NULL ,
-    cancelaciones VARCHAR2 (50 CHAR)
+    id               INTEGER NOT NULL ,
+    nombre           VARCHAR2 (30 CHAR) NOT NULL ,
+    cancelaciones    VARCHAR2 (50 CHAR) ,
+    TipoHospedaje_id INTEGER NOT NULL
   ) ;
 ALTER TABLE Hospedaje ADD CONSTRAINT Hospedaje_PK PRIMARY KEY ( id ) ;
+
+
+CREATE TABLE HospedajeRegimen
+  (
+    Hospedaje_id INTEGER NOT NULL ,
+    Regimen_id   INTEGER NOT NULL
+  ) ;
 
 
 CREATE TABLE Instalacion
@@ -139,9 +148,8 @@ ALTER TABLE Persona ADD CONSTRAINT Persona_PK PRIMARY KEY ( cedula ) ;
 
 CREATE TABLE Regimen
   (
-    id           INTEGER NOT NULL ,
-    Hospedaje_id INTEGER NOT NULL ,
-    descripcion  VARCHAR2 (150 CHAR) NOT NULL
+    id          INTEGER NOT NULL ,
+    descripcion VARCHAR2 (150 CHAR) NOT NULL
   ) ;
 ALTER TABLE Regimen ADD CONSTRAINT Regimen_PK PRIMARY KEY ( id ) ;
 
@@ -192,9 +200,8 @@ ALTER TABLE Telefono ADD CONSTRAINT Telefono_PK PRIMARY KEY ( id ) ;
 
 CREATE TABLE TipoHospedaje
   (
-    id           INTEGER NOT NULL ,
-    Hospedaje_id INTEGER NOT NULL ,
-    nombre       VARCHAR2 (30 CHAR) NOT NULL
+    id     INTEGER NOT NULL ,
+    nombre VARCHAR2 (30 CHAR) NOT NULL
   ) ;
 ALTER TABLE TipoHospedaje ADD CONSTRAINT TipoHospedaje_PK PRIMARY KEY ( id ) ;
 
@@ -226,11 +233,15 @@ ALTER TABLE Factura ADD CONSTRAINT Factura_Persona_FK FOREIGN KEY ( Persona_id )
 
 ALTER TABLE Habitacion ADD CONSTRAINT Habitacion_Hospedaje_FK FOREIGN KEY ( Hospedaje_id ) REFERENCES Hospedaje ( id ) ;
 
+ALTER TABLE HospedajeRegimen ADD CONSTRAINT HospedajeRegimen_Hospedaje_FK FOREIGN KEY ( Hospedaje_id ) REFERENCES Hospedaje ( id ) ;
+
+ALTER TABLE HospedajeRegimen ADD CONSTRAINT HospedajeRegimen_Regimen_FK FOREIGN KEY ( Regimen_id ) REFERENCES Regimen ( id ) ;
+
+ALTER TABLE Hospedaje ADD CONSTRAINT Hospedaje_TipoHospedaje_FK FOREIGN KEY ( TipoHospedaje_id ) REFERENCES TipoHospedaje ( id ) ;
+
 ALTER TABLE Instalacion ADD CONSTRAINT Instalacion_Hospedaje_FK FOREIGN KEY ( Hospedaje_id ) REFERENCES Hospedaje ( id ) ;
 
 ALTER TABLE Persona ADD CONSTRAINT Persona_Ciudad_FK FOREIGN KEY ( Ciudad_id ) REFERENCES Ciudad ( id ) ;
-
-ALTER TABLE Regimen ADD CONSTRAINT Regimen_Hospedaje_FK FOREIGN KEY ( Hospedaje_id ) REFERENCES Hospedaje ( id ) ;
 
 ALTER TABLE ResHabita ADD CONSTRAINT ResHabita_Habitacion_FK FOREIGN KEY ( Habitacion_id ) REFERENCES Habitacion ( id ) ;
 
@@ -246,14 +257,12 @@ ALTER TABLE Reserva ADD CONSTRAINT Reserva_Factura_FK FOREIGN KEY ( Factura_idFa
 
 ALTER TABLE Telefono ADD CONSTRAINT Telefono_Persona_FK FOREIGN KEY ( Persona_cedula ) REFERENCES Persona ( cedula ) ;
 
-ALTER TABLE TipoHospedaje ADD CONSTRAINT TipoHospedaje_Hospedaje_FK FOREIGN KEY ( Hospedaje_id ) REFERENCES Hospedaje ( id ) ;
-
 
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 
--- CREATE TABLE                            20
+-- CREATE TABLE                            21
 -- CREATE INDEX                             0
--- ALTER TABLE                             38
+-- ALTER TABLE                             39
 -- CREATE VIEW                              0
 -- ALTER VIEW                               0
 -- CREATE PACKAGE                           0

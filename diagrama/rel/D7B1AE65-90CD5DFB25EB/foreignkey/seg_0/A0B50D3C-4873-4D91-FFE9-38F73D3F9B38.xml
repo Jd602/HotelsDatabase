@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="044A3B93-3427-9732-7B53-6DAF5B4FB080" containerWithKeyObject="55C47BC0-3116-4E8F-9B33-FD216368A5EA" localFKIndex="9A88F800-29F6-1046-5600-05F7A7681409" name="TipoHospedaje_Hospedaje_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A0B50D3C-4873-4D91-FFE9-38F73D3F9B38" containerWithKeyObject="CD5F04B7-7EB0-CADC-4024-B5E80ACC03E6" localFKIndex="4ABB618B-2439-1512-6A47-CB0A47AF7335" name="HospedajeRegimen_Hospedaje_FK">
 <createdBy>tiger</createdBy>
-<createdTime>2022-05-22 06:36:02 UTC</createdTime>
+<createdTime>2022-05-31 02:14:54 UTC</createdTime>
 <ownerDesignName>diagrama</ownerDesignName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>C52BF912-ACE4-991C-9697-56B4D78D4D13</referredTableID>

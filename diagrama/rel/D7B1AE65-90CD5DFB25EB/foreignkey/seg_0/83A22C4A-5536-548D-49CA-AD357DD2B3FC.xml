@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="83A22C4A-5536-548D-49CA-AD357DD2B3FC" containerWithKeyObject="C52BF912-ACE4-991C-9697-56B4D78D4D13" localFKIndex="E79E4CFD-250B-371F-D9CC-857074846E9E" name="Hospedaje_TipoHospedaje_FK">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-31 01:29:28 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>55C47BC0-3116-4E8F-9B33-FD216368A5EA</referredTableID>
+<keyObject>2958D08A-1940-CB14-820A-34B3DB306EA8</keyObject>
+<referredKeyID>2958D08A-1940-CB14-820A-34B3DB306EA8</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
