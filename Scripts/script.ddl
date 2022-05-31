@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 4.1.3.901
---   en:        2022-05-30 17:59:51 COT
+--   en:        2022-05-30 19:30:27 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -20,9 +20,9 @@ ALTER TABLE Adicional ADD CONSTRAINT ServicioAdicional_PK PRIMARY KEY ( id ) ;
 CREATE TABLE Articulo
   (
     id                INTEGER NOT NULL ,
+    CompraArticulo_id INTEGER NOT NULL ,
     nombre            VARCHAR2 (20 CHAR) NOT NULL ,
     tipo              VARCHAR2 (20 CHAR) NOT NULL ,
-    CompraArticulo_id INTEGER NOT NULL ,
     descripcion       VARCHAR2 (25 CHAR)
   ) ;
 ALTER TABLE Articulo ADD CONSTRAINT Articulo_PK PRIMARY KEY ( id ) ;
@@ -31,19 +31,19 @@ ALTER TABLE Articulo ADD CONSTRAINT Articulo_PK PRIMARY KEY ( id ) ;
 CREATE TABLE Ciudad
   (
     id              INTEGER NOT NULL ,
-    nombre          VARCHAR2 (30 CHAR) NOT NULL ,
-    Departamento_id INTEGER NOT NULL
+    Departamento_id INTEGER NOT NULL ,
+    nombre          VARCHAR2 (30 CHAR) NOT NULL
   ) ;
 ALTER TABLE Ciudad ADD CONSTRAINT Ciudad_PK PRIMARY KEY ( id ) ;
 
 
 CREATE TABLE CompraArticulo
   (
-    id       INTEGER NOT NULL ,
-    fecha    DATE NOT NULL ,
-    cantidad INTEGER NOT NULL ,
-    subtotal FLOAT (10) NOT NULL ,
-    Factura_idFactura INTEGER NOT NULL
+    id                INTEGER NOT NULL ,
+    Factura_idFactura INTEGER NOT NULL ,
+    fecha             DATE NOT NULL ,
+    cantidad          INTEGER NOT NULL ,
+    subtotal FLOAT (10) NOT NULL
   ) ;
 ALTER TABLE CompraArticulo ADD CONSTRAINT CompraArticulo_PK PRIMARY KEY ( id ) ;
 
@@ -51,10 +51,10 @@ ALTER TABLE CompraArticulo ADD CONSTRAINT CompraArticulo_PK PRIMARY KEY ( id ) ;
 CREATE TABLE CompraPaquete
   (
     id                INTEGER NOT NULL ,
-    fecha             DATE NOT NULL ,
-    estado            VARCHAR2 (12) NOT NULL ,
     Paquete_id        INTEGER NOT NULL ,
-    Factura_idFactura INTEGER NOT NULL
+    Factura_idFactura INTEGER NOT NULL ,
+    fecha             DATE NOT NULL ,
+    estado            VARCHAR2 (12) NOT NULL
   ) ;
 ALTER TABLE CompraPaquete ADD CONSTRAINT CompraPaquete_PK PRIMARY KEY ( id ) ;
 
@@ -69,21 +69,21 @@ ALTER TABLE Departamento ADD CONSTRAINT Departamento_PK PRIMARY KEY ( id ) ;
 
 CREATE TABLE Factura
   (
-    idFactura INTEGER NOT NULL ,
-    valorTotal FLOAT (10) NOT NULL ,
+    idFactura  INTEGER NOT NULL ,
     Persona_id INTEGER NOT NULL ,
-    nota       VARCHAR2 (30 CHAR)
+    valorTotal FLOAT (10) NOT NULL ,
+    nota VARCHAR2 (30 CHAR)
   ) ;
 ALTER TABLE Factura ADD CONSTRAINT Factura_PK PRIMARY KEY ( idFactura ) ;
 
 
 CREATE TABLE Habitacion
   (
-    id    VARCHAR2 (5 CHAR) NOT NULL ,
-    nivel VARCHAR2 (20 CHAR) NOT NULL ,
+    id           VARCHAR2 (5 CHAR) NOT NULL ,
+    Hospedaje_id INTEGER NOT NULL ,
+    nivel        VARCHAR2 (20 CHAR) NOT NULL ,
     precioNoche FLOAT (10) NOT NULL ,
-    estado       VARCHAR2 (20 CHAR) NOT NULL ,
-    Hospedaje_id INTEGER NOT NULL
+    estado VARCHAR2 (20 CHAR) NOT NULL
   ) ;
 ALTER TABLE Habitacion ADD CONSTRAINT Habitacion_PK PRIMARY KEY ( id ) ;
 
@@ -100,8 +100,8 @@ ALTER TABLE Hospedaje ADD CONSTRAINT Hospedaje_PK PRIMARY KEY ( id ) ;
 CREATE TABLE Instalacion
   (
     id           INTEGER NOT NULL ,
-    nombre       VARCHAR2 (30 CHAR) NOT NULL ,
     Hospedaje_id INTEGER NOT NULL ,
+    nombre       VARCHAR2 (30 CHAR) NOT NULL ,
     estado       VARCHAR2 (20 CHAR)
   ) ;
 ALTER TABLE Instalacion ADD CONSTRAINT Instalacion_PK PRIMARY KEY ( id ) ;
@@ -128,10 +128,10 @@ ALTER TABLE Paquete ADD CONSTRAINT Paquete_PK PRIMARY KEY ( id ) ;
 CREATE TABLE Persona
   (
     cedula    INTEGER NOT NULL ,
+    Ciudad_id INTEGER NOT NULL ,
     nombre    VARCHAR2 (20 CHAR) NOT NULL ,
     apellido  VARCHAR2 (20 CHAR) NOT NULL ,
     direccion VARCHAR2 (50 CHAR) NOT NULL ,
-    Ciudad_id INTEGER NOT NULL ,
     correo    VARCHAR2 (30 CHAR)
   ) ;
 ALTER TABLE Persona ADD CONSTRAINT Persona_PK PRIMARY KEY ( cedula ) ;
@@ -140,41 +140,40 @@ ALTER TABLE Persona ADD CONSTRAINT Persona_PK PRIMARY KEY ( cedula ) ;
 CREATE TABLE Regimen
   (
     id           INTEGER NOT NULL ,
-    descripcion  VARCHAR2 (150 CHAR) NOT NULL ,
-    Hospedaje_id INTEGER NOT NULL
+    Hospedaje_id INTEGER NOT NULL ,
+    descripcion  VARCHAR2 (150 CHAR) NOT NULL
   ) ;
 ALTER TABLE Regimen ADD CONSTRAINT Regimen_PK PRIMARY KEY ( id ) ;
 
 
 CREATE TABLE ResHabita
   (
-    id                    INTEGER NOT NULL ,
-    Reserva_id            INTEGER NOT NULL ,
-    Reserva_cantidadNoche INTEGER NOT NULL ,
-    Habitacion_id         VARCHAR2 (5 CHAR) NOT NULL
+    id            INTEGER NOT NULL ,
+    Reserva_id    INTEGER NOT NULL ,
+    Habitacion_id VARCHAR2 (5 CHAR) NOT NULL
   ) ;
 ALTER TABLE ResHabita ADD CONSTRAINT ReservaHabitacion_PK PRIMARY KEY ( id ) ;
 
 
 CREATE TABLE Reserva
   (
-    id            INTEGER NOT NULL ,
-    fecha         DATE NOT NULL ,
-    fechaInicio   DATE NOT NULL ,
-    estado        VARCHAR2 (12 CHAR) NOT NULL ,
-    cantidadNoche INTEGER NOT NULL ,
-    valor FLOAT (11) NOT NULL ,
-    Factura_idFactura INTEGER NOT NULL
+    id                INTEGER NOT NULL ,
+    Factura_idFactura INTEGER NOT NULL ,
+    fecha             DATE NOT NULL ,
+    fechaInicio       DATE NOT NULL ,
+    estado            VARCHAR2 (12 CHAR) NOT NULL ,
+    cantidadNoche     INTEGER NOT NULL ,
+    valor FLOAT (11) NOT NULL
   ) ;
-ALTER TABLE Reserva ADD CONSTRAINT Reserva_PK PRIMARY KEY ( id, cantidadNoche ) ;
+ALTER TABLE Reserva ADD CONSTRAINT Reserva_PK PRIMARY KEY ( id ) ;
 
 
 CREATE TABLE ReservaVeh
   (
-    id INTEGER NOT NULL ,
+    id                INTEGER NOT NULL ,
+    Vehiculo_placa    VARCHAR2 (10 CHAR) NOT NULL ,
+    Factura_idFactura INTEGER NOT NULL ,
     costo FLOAT (10) NOT NULL ,
-    Vehiculo_placa       VARCHAR2 (10 CHAR) NOT NULL ,
-    Factura_idFactura    INTEGER NOT NULL ,
     fechaInicio          DATE NOT NULL ,
     fechaDevolucion      DATE NOT NULL ,
     ServicioAdicional_id INTEGER
@@ -185,8 +184,8 @@ ALTER TABLE ReservaVeh ADD CONSTRAINT ReservaVehiculo_PK PRIMARY KEY ( id ) ;
 CREATE TABLE Telefono
   (
     id             INTEGER NOT NULL ,
-    tipo           VARCHAR2 (30 CHAR) NOT NULL ,
-    Persona_cedula INTEGER
+    Persona_cedula INTEGER ,
+    tipo           VARCHAR2 (30 CHAR) NOT NULL
   ) ;
 ALTER TABLE Telefono ADD CONSTRAINT Telefono_PK PRIMARY KEY ( id ) ;
 
@@ -194,8 +193,8 @@ ALTER TABLE Telefono ADD CONSTRAINT Telefono_PK PRIMARY KEY ( id ) ;
 CREATE TABLE TipoHospedaje
   (
     id           INTEGER NOT NULL ,
-    nombre       VARCHAR2 (30 CHAR) NOT NULL ,
-    Hospedaje_id INTEGER NOT NULL
+    Hospedaje_id INTEGER NOT NULL ,
+    nombre       VARCHAR2 (30 CHAR) NOT NULL
   ) ;
 ALTER TABLE TipoHospedaje ADD CONSTRAINT TipoHospedaje_PK PRIMARY KEY ( id ) ;
 
@@ -235,7 +234,7 @@ ALTER TABLE Regimen ADD CONSTRAINT Regimen_Hospedaje_FK FOREIGN KEY ( Hospedaje_
 
 ALTER TABLE ResHabita ADD CONSTRAINT ResHabita_Habitacion_FK FOREIGN KEY ( Habitacion_id ) REFERENCES Habitacion ( id ) ;
 
-ALTER TABLE ResHabita ADD CONSTRAINT ResHabita_Reserva_FK FOREIGN KEY ( Reserva_id, Reserva_cantidadNoche ) REFERENCES Reserva ( id, cantidadNoche ) ;
+ALTER TABLE ResHabita ADD CONSTRAINT ResHabita_Reserva_FK FOREIGN KEY ( Reserva_id ) REFERENCES Reserva ( id ) ;
 
 ALTER TABLE ReservaVeh ADD CONSTRAINT ReservaVeh_Adicional_FK FOREIGN KEY ( ServicioAdicional_id ) REFERENCES Adicional ( id ) ;
 
