@@ -19,6 +19,20 @@
 <ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Hospedaje_id" id="D738F3F9-8DCE-BF6B-B975-15713D7FEF66">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:24:40 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E43D4A6-B663-4951-9D02-A0DF7CE77B2D" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
+</associations>
+</Column>
 <Column name="nivel" id="C345CFA7-2290-1110-A2FF-4CA8C0869BB4">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-29 01:16:26 UTC</createdTime>
@@ -52,20 +66,6 @@
 <dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Hospedaje_id" id="D738F3F9-8DCE-BF6B-B975-15713D7FEF66">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-29 00:24:40 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="9E43D4A6-B663-4951-9D02-A0DF7CE77B2D" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

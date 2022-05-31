@@ -18,6 +18,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Ciudad_id" id="3DB2CF51-73A4-B386-6B73-90ECFBDEA9A0">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:14:38 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7BC00D6-2C01-7FD5-D485-7AB42767E8A1" referredColumn="51393D3B-F34C-FB26-448F-CB321466C9DD"/>
+</associations>
+</Column>
 <Column name="nombre" id="BACC9B36-BC53-A17C-2EA2-E6FED3F7293A">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-29 01:01:14 UTC</createdTime>
@@ -50,20 +64,6 @@
 <dataTypeSize>50 CHAR</dataTypeSize>
 <ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Ciudad_id" id="3DB2CF51-73A4-B386-6B73-90ECFBDEA9A0">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-29 01:14:38 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="F7BC00D6-2C01-7FD5-D485-7AB42767E8A1" referredColumn="51393D3B-F34C-FB26-448F-CB321466C9DD"/>
-</associations>
 </Column>
 <Column name="correo" id="FC5CF712-D80A-2E49-CA6D-58CF28668992">
 <createdBy>tiger</createdBy>

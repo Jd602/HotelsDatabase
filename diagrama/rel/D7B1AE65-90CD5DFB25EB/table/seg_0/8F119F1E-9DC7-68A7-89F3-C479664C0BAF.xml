@@ -18,27 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="fecha" id="FEA9D48D-4457-1DC8-D47A-96CF28D1AAD6">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-21 00:25:47 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="estado" id="32AEE435-31F9-E78E-3006-F83D20FD430C">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-21 00:25:47 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>12</dataTypeSize>
-<ownDataTypeParameters>12,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Paquete_id" id="48EBB665-25F8-C0D9-DC10-0EBFAE8BE554">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-29 00:02:00 UTC</createdTime>
@@ -66,6 +45,27 @@
 <associations>
 <colAssociation fkAssociation="1C8F7240-CBBF-52F0-6B3F-F6F08B466940" referredColumn="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
 </associations>
+</Column>
+<Column name="fecha" id="FEA9D48D-4457-1DC8-D47A-96CF28D1AAD6">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:25:47 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="32AEE435-31F9-E78E-3006-F83D20FD430C">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:25:47 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

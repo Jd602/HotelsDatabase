@@ -18,6 +18,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Factura_idFactura" id="63D16554-2455-5652-0346-A012055A82D9">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 00:01:13 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06061852-7922-5529-166F-E5660DE8130E" referredColumn="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
+</associations>
+</Column>
 <Column name="fecha" id="14D9FE31-5FD5-A0CD-4870-441822521674">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-21 00:12:44 UTC</createdTime>
@@ -71,20 +85,6 @@
 <ownDataTypeParameters>,11,3</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Factura_idFactura" id="63D16554-2455-5652-0346-A012055A82D9">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-29 00:01:13 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="06061852-7922-5529-166F-E5660DE8130E" referredColumn="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E6FA2D58-EF9C-178E-5D86-0F3B710954E8" name="Reserva_PK">
@@ -96,7 +96,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="C0D27A13-FA28-47B1-A6C5-CAFDFA465169"/>
-<colUsage columnID="53A76FE7-7A86-8948-B6BC-57BDE09F1946"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="F9C3E696-69DB-31CD-34CE-1A1938B85B28" name="Reserva_Factura_FK">

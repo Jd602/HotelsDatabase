@@ -19,17 +19,6 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <isDiscriminatorColumn>true</isDiscriminatorColumn>
 </Column>
-<Column name="tipo" id="BB08B8E7-9ADA-FB99-BC59-9AA0F038348B">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-29 01:02:53 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Persona_cedula" id="EF8CE309-493C-6756-7556-EF92710537C0">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-29 04:35:36 UTC</createdTime>
@@ -44,6 +33,17 @@
 <associations>
 <colAssociation fkAssociation="73C21F5C-0371-A67B-EEB3-13AAA0DDAD1C" referredColumn="D4A1A355-446F-6EE4-B3CF-898BD2580A26"/>
 </associations>
+</Column>
+<Column name="tipo" id="BB08B8E7-9ADA-FB99-BC59-9AA0F038348B">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-29 01:02:53 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

@@ -32,20 +32,6 @@
 <colAssociation fkAssociation="8C78B25D-78BB-02C5-380D-0D9FFBB35A0D" referredColumn="C0D27A13-FA28-47B1-A6C5-CAFDFA465169"/>
 </associations>
 </Column>
-<Column name="Reserva_cantidadNoche" id="1099C8A6-4059-C934-EB3F-7840FA9F711B">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-29 00:37:05 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="8C78B25D-78BB-02C5-380D-0D9FFBB35A0D" referredColumn="53A76FE7-7A86-8948-B6BC-57BDE09F1946"/>
-</associations>
-</Column>
 <Column name="Habitacion_id" id="7982214C-0080-C060-A66B-FAB687C6CA7C">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-29 04:31:37 UTC</createdTime>
@@ -82,7 +68,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="D424461A-DFBE-A85B-A123-BF3447F27D66"/>
-<colUsage columnID="1099C8A6-4059-C934-EB3F-7840FA9F711B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="3FB467D2-9F9C-BC3C-01AA-F2B3865DF50A" name="ResHabita_Habitacion_FK">

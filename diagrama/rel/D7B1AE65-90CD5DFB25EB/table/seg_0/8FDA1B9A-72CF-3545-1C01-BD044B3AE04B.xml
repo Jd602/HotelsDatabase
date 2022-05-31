@@ -18,18 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="costo" id="B340A398-0FAF-ABB0-E1CC-C62DFA4E789A">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-28 23:36:34 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT021</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<dataTypeScale>3</dataTypeScale>
-<ownDataTypeParameters>,10,3</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Vehiculo_placa" id="CB9AF263-A5CD-CF5D-C9D9-6C1DD564E67A">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-28 23:59:46 UTC</createdTime>
@@ -38,7 +26,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10 CHAR</dataTypeSize>
-<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -58,6 +46,18 @@
 <associations>
 <colAssociation fkAssociation="98E38D31-03E0-D0FC-4E3B-C096E50EB7D2" referredColumn="4D3D11DA-288E-4124-5F33-EAD991E5385E"/>
 </associations>
+</Column>
+<Column name="costo" id="B340A398-0FAF-ABB0-E1CC-C62DFA4E789A">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-28 23:36:34 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,10,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="fechaInicio" id="1B6FD873-7B50-25EB-B5FC-CAA9936AFB77">
 <createdBy>tiger</createdBy>

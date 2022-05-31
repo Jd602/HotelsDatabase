@@ -18,17 +18,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nombre" id="8BFD02FE-920C-975A-E891-D6B3B7C83C12">
-<createdBy>tiger</createdBy>
-<createdTime>2022-05-21 00:05:50 UTC</createdTime>
-<ownerDesignName>diagrama</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30 CHAR</dataTypeSize>
-<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Hospedaje_id" id="E595A198-77F2-CE90-0CF1-486A93ADB88B">
 <createdBy>tiger</createdBy>
 <createdTime>2022-05-22 06:36:25 UTC</createdTime>
@@ -42,6 +31,17 @@
 <associations>
 <colAssociation fkAssociation="0CDC0228-13E0-6098-B43F-1FF577D7797C" referredColumn="7AE585A2-46E3-0531-0841-4384A1B00AFA"/>
 </associations>
+</Column>
+<Column name="nombre" id="8BFD02FE-920C-975A-E891-D6B3B7C83C12">
+<createdBy>tiger</createdBy>
+<createdTime>2022-05-21 00:05:50 UTC</createdTime>
+<ownerDesignName>diagrama</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="estado" id="9F307978-4852-6FC0-EB15-BF9DD5C7B9E3">
 <createdBy>tiger</createdBy>
