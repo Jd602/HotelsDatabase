@@ -194,18 +194,7 @@
                   <Insets top="20.0" />
                </VBox.margin>
                <children>
-                  <BorderPane HBox.hgrow="SOMETIMES">
-                     <top>
-                        <Label text="Cantidad de Pasajeros" BorderPane.alignment="CENTER_LEFT">
-                           <BorderPane.margin>
-                              <Insets bottom="10.0" />
-                           </BorderPane.margin>
-                        </Label>
-                     </top>
-                     <center>
-                        <TextField fx:id="textFieldCantPasajeros" BorderPane.alignment="CENTER" />
-                     </center>
-                  </BorderPane>
+                  <BorderPane HBox.hgrow="SOMETIMES" />
                </children>
             </HBox>
             <BorderPane>

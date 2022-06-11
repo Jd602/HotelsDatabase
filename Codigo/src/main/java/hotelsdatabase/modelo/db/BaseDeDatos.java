@@ -1,12 +1,12 @@
 package hotelsdatabase.modelo.db;
 
 import hotelsdatabase.Aplicacion;
-import hotelsdatabase.modelo.entidad.Hospedaje;
-import hotelsdatabase.modelo.entidad.Regimen;
-import hotelsdatabase.modelo.entidad.TipoHospedaje;
-import hotelsdatabase.modelo.entidad.Vehiculo;
+import hotelsdatabase.modelo.entidad.*;
+import oracle.jdbc.OracleTypes;
 
 import java.sql.*;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.*;
 
 public class BaseDeDatos {
@@ -44,22 +44,133 @@ public class BaseDeDatos {
 		return lista;
 	}
 
-	public Collection<Vehiculo> buscarVehiculos(int cantPasajeros, String tipo, String gama) throws SQLException {
+	public List<Ciudad> buscarCiudades() throws SQLException {
+		List<Ciudad> lista = new ArrayList<>();
+		PreparedStatement sentencia = this.conexion.prepareStatement("select id, nombre from Ciudad");
+		ResultSet resultado = sentencia.executeQuery();
+		while (resultado.next()) {
+			lista.add(new Ciudad(resultado.getInt("id"), resultado.getString("nombre")));
+		}
+		return lista;
+	}
+
+	public Factura buscarFactura(int id) throws SQLException {
+		Statement sentencia = this.conexion.createStatement();
+		ResultSet resultado = sentencia.executeQuery("SELECT id, valorTotal, persona_cedula, persona_nombre, persona_apellido FROM FacturaInfo WHERE id = " + id);
+		if (resultado.next()) {
+			Persona persona = new Persona(
+					resultado.getInt("persona_cedula"),
+					resultado.getString("persona_nombre"),
+					resultado.getString("persona_apellido")
+			);
+			return new Factura(
+					id,
+					persona,
+					resultado.getFloat("valorTotal")
+			);
+		}
+		return null;
+	}
+
+	public Factura crearReserva(int clienteCedula, String placaVehiculo, LocalDate fechaInicial, LocalDate fechaFinal) throws SQLException {
+		String sql="begin ? := TR_RESERVA_VEHICULO(?,?,?,?); end;";
+
+		CallableStatement sentencia = this.conexion.prepareCall(sql);
+		sentencia.registerOutParameter(1, OracleTypes.INTEGER);
+		sentencia.setInt(2, clienteCedula);
+		sentencia.setString(3, placaVehiculo);
+		sentencia.setDate(4, new Date(fechaInicial.toEpochDay()));
+		sentencia.setDate(5, new Date(fechaFinal.toEpochDay()));
+		sentencia.executeUpdate();
+
+		int facturaId = sentencia.getInt(1);
+		if (facturaId >= 0) {
+			return buscarFactura(facturaId);
+		}
+
+		return null;
+	}
+
+	public Factura crearReserva(int clienteCedula, int hospedajeId, String nivel, LocalDate fechaInicio, int cantidadNoches, int cantidadHabitaciones) throws SQLException {
+		String sql="begin ? := TR_RESERVA_CLIENTE(?,?,?,?,?,?); end;";
+
+		CallableStatement sentencia = this.conexion.prepareCall(sql);
+		sentencia.registerOutParameter(1, OracleTypes.INTEGER);
+		sentencia.setInt(2, clienteCedula);
+		sentencia.setInt(3, hospedajeId);
+		sentencia.setString(4, nivel);
+		sentencia.setDate(5, new Date(fechaInicio.toEpochDay()));
+		sentencia.setInt(6, cantidadNoches);
+		sentencia.setInt(7, cantidadHabitaciones);
+		sentencia.executeUpdate();
+
+		int facturaId = sentencia.getInt(1);
+		if (facturaId >= 0) {
+			return buscarFactura(facturaId);
+		}
+
+		return null;
+	}
+
+	public boolean crearVehiculo(Vehiculo vehiculo) throws SQLException {
+		PreparedStatement sentencia = this.conexion.prepareStatement("INSERT INTO Vehiculo VALUES (?, ?, ?, ?, ?, ?, ?)");
+		sentencia.setString(1, vehiculo.getPlaca());
+		sentencia.setString(2, vehiculo.getMarca());
+		sentencia.setString(3, vehiculo.getTipo());
+		sentencia.setInt(4, vehiculo.getCapacidad());
+		sentencia.setFloat(5, vehiculo.getValorPorDia());
+		sentencia.setString(6, vehiculo.getGama());
+		sentencia.setString(7, vehiculo.getEstado());
+		return sentencia.executeUpdate() >= 1;
+	}
+
+	public boolean actualizarVehiculo(Vehiculo vehiculo) throws SQLException {
+		PreparedStatement sentencia = this.conexion.prepareStatement("UPDATE Vehiculo SET marca = ?, tipo = ?, capacidad = ?, valordia = ?, gama = ?, estado = ? WHERE placa = ?");
+		sentencia.setString(1, vehiculo.getMarca());
+		sentencia.setString(2, vehiculo.getTipo());
+		sentencia.setInt(3, vehiculo.getCapacidad());
+		sentencia.setFloat(4, vehiculo.getValorPorDia());
+		sentencia.setString(5, vehiculo.getGama());
+		sentencia.setString(6, vehiculo.getEstado());
+		sentencia.setString(7, vehiculo.getPlaca());
+		return sentencia.executeUpdate() >= 1;
+	}
+
+	public Collection<Vehiculo> buscarVehiculos(int cantPasajeros, String tipo, String gama, boolean disponible) throws SQLException {
 
 		List<Vehiculo> lista = new ArrayList<>();
 
-		String sql = "SELECT placa,marca,tipo,capacidad,valordia,gama FROM Vehiculo WHERE estado = 'disponible'";
+		String sql = "SELECT placa,marca,tipo,capacidad,valordia,gama,estado FROM Vehiculo";
+
+		if (disponible) {
+			sql += " WHERE estado = 'disponible'";
+		}
 
 		if (cantPasajeros >= 1) {
-			sql += " AND capacidad >= " + cantPasajeros;
+			if (sql.contains("WHERE")) {
+				sql += " AND ";
+			} else {
+				sql += " WHERE ";
+			}
+			sql += "capacidad >= " + cantPasajeros;
 		}
 
 		if (tipo != null) {
-			sql += " AND tipo = '" + tipo + "'";
+			if (sql.contains("WHERE")) {
+				sql += " AND ";
+			} else {
+				sql += " WHERE ";
+			}
+			sql += "tipo = '" + tipo + "'";
 		}
 
 		if (gama != null) {
-			sql += " AND gama = '" + gama + "'";
+			if (sql.contains("WHERE")) {
+				sql += " AND ";
+			} else {
+				sql += " WHERE ";
+			}
+			sql += "gama = '" + gama + "'";
 		}
 
 		PreparedStatement sentencia = this.conexion.prepareStatement(sql);
@@ -71,7 +182,8 @@ public class BaseDeDatos {
 					resultado.getString("tipo"),
 					resultado.getInt("capacidad"),
 					resultado.getInt("valordia"),
-					resultado.getString("gama")
+					resultado.getString("gama"),
+					resultado.getString("estado")
 			));
 		}
 
@@ -131,5 +243,7 @@ public class BaseDeDatos {
 	public Connection getConexion() {
 		return conexion;
 	}
+
+
 
 }

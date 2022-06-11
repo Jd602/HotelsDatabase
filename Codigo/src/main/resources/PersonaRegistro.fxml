@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox prefHeight="473.0" prefWidth="639.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <BorderPane>
+               <top>
+                  <Label text="Cedula:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldPlaca" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <top>
+                  <Label text="Ciudad:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldMarca" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane layoutX="30.0" layoutY="92.0">
+               <top>
+                  <Label text="Nombre:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldTipo" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane layoutX="30.0" layoutY="154.0">
+               <top>
+                  <Label text="Apellido:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldCapacidad" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane layoutX="30.0" layoutY="216.0">
+               <top>
+                  <Label text="Dirección:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldValorPorDia" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane layoutX="30.0" layoutY="278.0">
+               <top>
+                  <Label text="Correo:" BorderPane.alignment="CENTER_LEFT">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <center>
+                  <TextField fx:id="textFieldGama" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane nodeOrientation="LEFT_TO_RIGHT">
+               <top>
+                  <BorderPane BorderPane.alignment="CENTER">
+                     <left>
+                        <Label contentDisplay="CENTER" text="Telefonos:" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets right="10.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </left>
+                     <center>
+                        <TextField fx:id="textFieldGama1" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets right="10.0" />
+                           </BorderPane.margin>
+                        </TextField>
+                     </center>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" />
+                     </BorderPane.margin>
+                     <right>
+                        <HBox spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" text="Agregar Telefono" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Eliminar Telefono" />
+                           </children>
+                        </HBox>
+                     </right>
+                  </BorderPane>
+               </top>
+               <center>
+                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="598.0" text="Telefono" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+            <BorderPane>
+               <center>
+                  <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="crearVehiculoBoton" mnemonicParsing="false" onAction="#crear" text="Registrarse">
+                           <padding>
+                              <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

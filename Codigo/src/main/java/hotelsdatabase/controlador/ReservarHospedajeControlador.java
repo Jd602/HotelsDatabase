@@ -1,6 +1,7 @@
 package hotelsdatabase.controlador;
 
 import hotelsdatabase.Aplicacion;
+import hotelsdatabase.modelo.entidad.Factura;
 import hotelsdatabase.modelo.entidad.Hospedaje;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import javax.swing.*;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -107,13 +109,12 @@ public class ReservarHospedajeControlador {
     }
 
     @FXML
-    public void ejecutar(ActionEvent evento) {
+    public void ejecutar(ActionEvent evento) throws Throwable {
 
         int cedula;
         int numHabitaciones;
-        String nivelHabitacion = this.comboBoxNivelHabitacion.getValue();
-        String fechaInicial = formatoFecha(this.datePickerFechaInicio.getValue());
-        String fechaFinal = formatoFecha(this.datePickerFechaFinal.getValue());
+        String nivelHabitacion = this.comboBoxNivelHabitacion.getValue().toLowerCase();
+        Long cantidadNoches = Duration.between(this.datePickerFechaInicio.getValue().atStartOfDay(), this.datePickerFechaFinal.getValue().atStartOfDay()).toDays();
 
         try {
             cedula = Integer.parseInt(this.textFieldCedula.getText());
@@ -135,7 +136,14 @@ public class ReservarHospedajeControlador {
             return;
         }
 
-        System.out.println(cedula + " #" + numHabitaciones + " -> " + fechaInicial + " " + fechaFinal + " NH " + nivelHabitacion);
+        Factura factura = Aplicacion.getCore().getBaseDeDatos().crearReserva(cedula, this.hospedaje.getId(), nivelHabitacion, datePickerFechaInicio.getValue(), cantidadNoches.intValue(), numHabitaciones);
+        if (factura == null) {
+            JOptionPane.showMessageDialog(null, "No se han encontrado las habitaciones requeridas.", "¡Ha ocurrido un error!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        JOptionPane.showMessageDialog(null, "Se ha creado la reserva de un hospedaje con factura (#" + factura.getId() + ") registrada al cliente " + factura.getPersona().getNombreCompleto() + " por un valor de: $" + factura.getValorTotal(), "¡Factura Creada!", JOptionPane.INFORMATION_MESSAGE);
+        Aplicacion.getAplicacion().mostrarHospedajesBusqueda();
 
     }
 

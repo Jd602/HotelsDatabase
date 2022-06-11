@@ -1,6 +1,7 @@
 package hotelsdatabase.controlador;
 
 import hotelsdatabase.Aplicacion;
+import hotelsdatabase.modelo.entidad.Factura;
 import hotelsdatabase.modelo.entidad.Vehiculo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,9 +41,6 @@ public class ReservarVehiculoControlador {
 
     @FXML
     private DatePicker datePickerFechaFinal;
-
-    @FXML
-    private TextField textFieldCantPasajeros;
 
     @FXML
     private Label labelDias;
@@ -92,12 +90,9 @@ public class ReservarVehiculoControlador {
     }
 
     @FXML
-    public void ejecutar(ActionEvent evento) {
+    public void ejecutar(ActionEvent evento) throws Throwable {
 
         int cedula;
-        int cantPasajeros;
-        String fechaInicial = formatoFecha(this.datePickerFechaInicio.getValue());
-        long dias = Duration.between(this.datePickerFechaInicio.getValue().atStartOfDay(), this.datePickerFechaFinal.getValue().atStartOfDay()).toDays();
 
         try {
             cedula = Integer.parseInt(this.textFieldCedula.getText());
@@ -106,24 +101,18 @@ public class ReservarVehiculoControlador {
             return;
         }
 
-        try {
-            cantPasajeros = Integer.parseInt(this.textFieldCantPasajeros.getText());
-
-            if (cantPasajeros <= 0) {
-                JOptionPane.showMessageDialog(null, "La cantidad de pasajeros debe ser al menos uno.", "¡Ha ocurrido un error!", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            if (cantPasajeros > this.vehiculo.getCapacidad()) {
-                JOptionPane.showMessageDialog(null, "La cantidad de pasajeros es más alta que la capacidad total.", "¡Ha ocurrido un error!", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-        } catch (Throwable ex) {
-            JOptionPane.showMessageDialog(null, "La cantidad de pasajeros es incorrecto.", "¡Ha ocurrido un error!", JOptionPane.ERROR_MESSAGE);
+        Factura factura = Aplicacion.getCore().getBaseDeDatos().crearReserva(
+                cedula,
+                this.vehiculo.getPlaca(),
+                datePickerFechaInicio.getValue(),
+                datePickerFechaFinal.getValue());
+        if (factura == null) {
+            JOptionPane.showMessageDialog(null, "El vehiculo actualmente no se encuentra disponible.", "¡Ha ocurrido un error!", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
+        JOptionPane.showMessageDialog(null, "Se ha creado la reserva de un vehiculo #" + vehiculo.getPlaca() + " con factura (#" + factura.getId() + ") registrada al cliente " + factura.getPersona().getNombreCompleto() + " por un valor de: $" + factura.getValorTotal(), "¡Factura Creada!", JOptionPane.INFORMATION_MESSAGE);
+        Aplicacion.getAplicacion().mostrarVehiculosBusqueda();
 
     }
 

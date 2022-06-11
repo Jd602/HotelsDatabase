@@ -3,6 +3,7 @@ module hotelsdatabase {
     requires javafx.fxml;
     requires java.sql;
     requires java.desktop;
+    requires ojdbc10;
     requires static lombok;
 
     opens hotelsdatabase to javafx.fxml;

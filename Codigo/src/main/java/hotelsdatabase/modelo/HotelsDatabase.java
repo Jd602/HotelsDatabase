@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hotelsdatabase.modelo.db.BaseDeDatos;
+import hotelsdatabase.modelo.entidad.Ciudad;
 import hotelsdatabase.modelo.entidad.Regimen;
 import hotelsdatabase.modelo.entidad.TipoHospedaje;
+import hotelsdatabase.modelo.entidad.Vehiculo;
 import lombok.Getter;
 
 public class HotelsDatabase {
@@ -19,6 +21,9 @@ public class HotelsDatabase {
 
 	@Getter
 	private final List<Regimen> regimenes = new ArrayList<>();
+
+	@Getter
+	private final List<Ciudad> ciudades = new ArrayList<>();
 
 	public HotelsDatabase() {}
 
@@ -50,6 +55,10 @@ public class HotelsDatabase {
 		return null;
 	}
 
+	public void cargarCiudades() throws SQLException {
+		this.ciudades.addAll(baseDeDatos.buscarCiudades());
+	}
+
 	public void iniciar() throws SQLException {
 
 		this.baseDeDatos = new BaseDeDatos();
@@ -58,6 +67,7 @@ public class HotelsDatabase {
 		// Cargar los tipos de hospedajes
 		cargarTipoHospedajes();
 		cargarRegimenes();
+		cargarCiudades();
 
 	}
 

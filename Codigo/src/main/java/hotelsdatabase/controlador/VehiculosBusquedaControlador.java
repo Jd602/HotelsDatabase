@@ -94,7 +94,7 @@ public class VehiculosBusquedaControlador {
 
         tableVehiculo.getItems().clear();
         tableVehiculo.getItems().addAll(
-                Aplicacion.getCore().getBaseDeDatos().buscarVehiculos(cantPasajeros, tipo, gama)
+                Aplicacion.getCore().getBaseDeDatos().buscarVehiculos(cantPasajeros, tipo, gama, true)
         );
 
     }

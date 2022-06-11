@@ -13,5 +13,6 @@ public class Vehiculo {
     private final int capacidad;
     private final int valorPorDia;
     private final String gama;
+    private final String estado;
 
 }
