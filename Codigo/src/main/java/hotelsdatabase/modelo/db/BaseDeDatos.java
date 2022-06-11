@@ -4,6 +4,7 @@ import hotelsdatabase.Aplicacion;
 import hotelsdatabase.modelo.entidad.Hospedaje;
 import hotelsdatabase.modelo.entidad.Regimen;
 import hotelsdatabase.modelo.entidad.TipoHospedaje;
+import hotelsdatabase.modelo.entidad.Vehiculo;
 
 import java.sql.*;
 import java.util.*;
@@ -43,6 +44,41 @@ public class BaseDeDatos {
 		return lista;
 	}
 
+	public Collection<Vehiculo> buscarVehiculos(int cantPasajeros, String tipo, String gama) throws SQLException {
+
+		List<Vehiculo> lista = new ArrayList<>();
+
+		String sql = "SELECT placa,marca,tipo,capacidad,valordia,gama FROM Vehiculo WHERE estado = 'disponible'";
+
+		if (cantPasajeros >= 1) {
+			sql += " AND capacidad >= " + cantPasajeros;
+		}
+
+		if (tipo != null) {
+			sql += " AND tipo = '" + tipo + "'";
+		}
+
+		if (gama != null) {
+			sql += " AND gama = '" + gama + "'";
+		}
+
+		PreparedStatement sentencia = this.conexion.prepareStatement(sql);
+		ResultSet resultado = sentencia.executeQuery();
+		while (resultado.next()) {
+			lista.add(new Vehiculo(
+					resultado.getString("placa"),
+					resultado.getString("marca"),
+					resultado.getString("tipo"),
+					resultado.getInt("capacidad"),
+					resultado.getInt("valordia"),
+					resultado.getString("gama")
+			));
+		}
+
+		return lista;
+
+	}
+
 	public Collection<Hospedaje> buscarHospedajes(String nombre, TipoHospedaje tipoHospedaje, Regimen regimen) throws SQLException {
 
 		String sql = "select id, nombre, cancelaciones, tipohospedaje_id, regimen_id from HospedajeInfo";
@@ -79,6 +115,7 @@ public class BaseDeDatos {
 			}
 			hospedaje.getRegimenes().add(Aplicacion.getCore().buscarRegimen(resultado.getInt("regimen_id")));
 		}
+
 		return mapa.values();
 	}
 	

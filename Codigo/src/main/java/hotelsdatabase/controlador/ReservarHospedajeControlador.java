@@ -1,5 +1,6 @@
 package hotelsdatabase.controlador;
 
+import hotelsdatabase.Aplicacion;
 import hotelsdatabase.modelo.entidad.Hospedaje;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,9 +74,9 @@ public class ReservarHospedajeControlador {
 
         LocalDate actualFecha = LocalDate.now();
         LocalDate siguienteFecha = actualFecha.plusDays(1);
-
         this.datePickerFechaInicio.setValue(actualFecha);
         this.datePickerFechaFinal.setValue(siguienteFecha);
+
         this.comboBoxNivelHabitacion.getItems().addAll(Arrays.asList("Alto", "Medio", "Bajo"));
         this.comboBoxNivelHabitacion.setValue("Medio");
         this.textFieldNumHabitacion.setText("1");
@@ -96,8 +97,13 @@ public class ReservarHospedajeControlador {
         labelNumNoches.setText(String.valueOf(Duration.between(fechaActual.atStartOfDay(), fechaFinal.atStartOfDay()).toDays()));
     }
 
-    public String formatoFecha(LocalDate fecha) {
+    private String formatoFecha(LocalDate fecha) {
         return "DATE'" + fecha.getYear() + "-" + fecha.getMonthValue() + "-" + fecha.getDayOfMonth();
+    }
+
+    @FXML
+    public void cancelar(ActionEvent evento) throws Throwable {
+        Aplicacion.getAplicacion().mostrarHospedajesBusqueda();
     }
 
     @FXML
@@ -129,7 +135,7 @@ public class ReservarHospedajeControlador {
             return;
         }
 
-        System.out.println(cedula + " #" + numHabitaciones + " -> " + fechaInicial + " " + fechaFinal + " habitacion " + nivelHabitacion);
+        System.out.println(cedula + " #" + numHabitaciones + " -> " + fechaInicial + " " + fechaFinal + " NH " + nivelHabitacion);
 
     }
 

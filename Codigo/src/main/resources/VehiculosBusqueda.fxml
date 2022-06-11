@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane maxHeight="-Infinity">
+                     <top>
+                        <Label text="Cantidad de Pasajeros" BorderPane.alignment="CENTER_LEFT" />
+                     </top>
+                     <center>
+                        <TextField fx:id="textFieldCantPasajeros" prefWidth="250.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane maxHeight="-Infinity" maxWidth="-Infinity">
+                     <top>
+                        <Label text="Tipo" BorderPane.alignment="CENTER_LEFT" />
+                     </top>
+                     <center>
+                        <ComboBox fx:id="comboBoxTipo" prefWidth="250.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane maxHeight="-Infinity" maxWidth="-Infinity">
+                     <top>
+                        <Label text="Gama" BorderPane.alignment="CENTER_LEFT" />
+                     </top>
+                     <center>
+                        <ComboBox fx:id="comboBoxGama" prefWidth="250.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </HBox>
+         </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#buscar" text="Buscar Vehiculos" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </top>
+   <center>
+      <TableView fx:id="tableVehiculo" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="tableColumnPlaca" minWidth="-1.0" prefWidth="79.0" text="Placa" />
+            <TableColumn fx:id="tableColumnMarca" minWidth="0.0" prefWidth="122.0" text="Marca" />
+            <TableColumn fx:id="tableColumnTipo" minWidth="0.0" prefWidth="194.0" text="Tipo" />
+            <TableColumn fx:id="tableColumnCapacidad" minWidth="0.0" prefWidth="252.0" text="Capacidad" />
+            <TableColumn fx:id="tableColumnValorDia" minWidth="0.0" prefWidth="142.0" text="Valor por Dia" />
+         </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#reservar" text="Reservar Vehiculo" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </Button>
+   </bottom>
+</BorderPane>

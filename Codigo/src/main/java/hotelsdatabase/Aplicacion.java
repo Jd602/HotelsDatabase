@@ -2,8 +2,11 @@ package hotelsdatabase;
 
 import hotelsdatabase.controlador.HospedajesBusquedaControlador;
 import hotelsdatabase.controlador.ReservarHospedajeControlador;
+import hotelsdatabase.controlador.ReservarVehiculoControlador;
+import hotelsdatabase.controlador.VehiculosBusquedaControlador;
 import hotelsdatabase.modelo.HotelsDatabase;
 import hotelsdatabase.modelo.entidad.Hospedaje;
+import hotelsdatabase.modelo.entidad.Vehiculo;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,13 +30,29 @@ public class Aplicacion extends Application {
 	public void start(Stage escenario) {
 		this.escenarioPrincipal = escenario;
 		try {
-			mostrarHospedajesBusqueda();
+			mostrarVehiculosBusqueda();
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	private void mostrarHospedajesBusqueda() throws Throwable {
+	public void mostrarVehiculosBusqueda() throws Throwable {
+		VehiculosBusquedaControlador controlador = new VehiculosBusquedaControlador();
+		Scene escena = new Scene(cargarFXML("VehiculosBusqueda", controlador), 800, 600);
+		this.escenarioPrincipal.setScene(escena);
+		this.escenarioPrincipal.show();
+		controlador.buscar(null);
+	}
+
+	public void mostrarReservarVehiculo(Vehiculo vehiculo) throws IOException {
+		ReservarVehiculoControlador controlador = new ReservarVehiculoControlador();
+		Scene escena = new Scene(cargarFXML("ReservaVehiculo", controlador), 800, 600);
+		this.escenarioPrincipal.setScene(escena);
+		this.escenarioPrincipal.show();
+		controlador.iniciar(vehiculo);
+	}
+
+	public void mostrarHospedajesBusqueda() throws Throwable {
 		HospedajesBusquedaControlador controlador = new HospedajesBusquedaControlador();
 		Scene escena = new Scene(cargarFXML("HospedajesBusqueda", controlador), 800, 600);
 		this.escenarioPrincipal.setScene(escena);
